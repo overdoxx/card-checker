@@ -1,0 +1,208 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c2e;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1f3b, #19192e);
+  }
+  
+  .container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-container {
+    padding: 10px;
+  }
+  
+  .card {
+    background-color: #2e2e3d;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-chip {
+    width: 40px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  
+  .card-number {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .card-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .card-expiry {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .card-cvv {
+    flex: 1;
+    margin-left: 70px;
+  }
+  
+  .card-name {
+    font-size: 14px;
+  }
+  
+  .form-container {
+    background-color: #ffffff;
+    padding: 25px 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-container1 h1{
+    color: white;
+  }
+  .form-container1 {
+    background-color: #2a2a30;
+    padding: 25px 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #6200ea;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #4b00b5;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .card-info-container {
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-info-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-info {
+    background-color: #2e2e3d;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-info-logo, .card-info-chip {
+    width: 40px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  
+  .card-info-number {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .card-info-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-info-expiry, .card-info-cvv {
+    flex: 1;
+  }
+  
+  .card-info-name {
+    font-size: 14px;
+  }
+  
+
+
+  .result-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .result-container h1 {
+    color: #4caf50;
+  }
+  
+  .result-container a {
+    color: #6200ea;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

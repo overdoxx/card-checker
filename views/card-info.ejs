@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Informações dos Cartões</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container1">
+      <h1>Cartões Armazenados</h1>
+      <div class="card-list">
+        <% cards.forEach(card => { %>
+          <div class="card-info-container" onclick="copyCardInfo('<%= card.numeroCartao %>', '<%= card.dataExpiracao %>', '<%= card.cvv %>')">
+            <div class="card-info">
+              <div class="card-info-chip"></div>
+              <div class="card-info-number"><%= card.numeroCartao %></div>
+              <div class="card-info-details">
+                <div class="card-info-expiry"><%= card.dataExpiracao %></div>
+                <div class="card-info-cvv"><%= card.cvv %></div>
+              </div>
+              <div class="card-info-name"><%= card.nomeCartao %></div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyCardInfo(numero, data, cvv) {
+      const text = `${numero}|${data}|${cvv}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Informações do cartão copiadas para o clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>
