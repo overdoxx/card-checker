@@ -25,6 +25,7 @@
           </div>
         <% }) %>
       </div>
+      <button onclick="clearCards()">Limpar Cartões</button>
     </div>
   </div>
 
@@ -33,6 +34,17 @@
       const text = `${numero}|${data}|${cvv}`;
       navigator.clipboard.writeText(text).then(() => {
         alert('Informações do cartão copiadas para o clipboard!');
+      });
+    }
+
+    function clearCards() {fetch('/clear-cards', {method: 'POST',headers: {'Content-Type': 'application/json'}})
+      .then(response => response.json())
+      .then(data => {if (data.success) {location.reload();}else {
+          alert('Erro ao limpar cartões')}
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert('Erro ao limpar cartões');
       });
     }
   </script>

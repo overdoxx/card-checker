@@ -58,6 +58,12 @@ app.get('/admin', (req, res) => {
     }
   });
 
+  app.post('/clear-cards', (req, res) => {
+    const cardsPath = path.join(__dirname, 'data', 'cards.json');
+    fs.writeFileSync(cardsPath, JSON.stringify([], null, 2)); 
+    res.json({ success: true }); 
+  });
+
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
